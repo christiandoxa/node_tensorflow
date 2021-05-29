@@ -18,7 +18,8 @@ function textToSequence(rawInput) {
     return input.reduce(function (finalResult, currentInput) {
         const words = currentInput.split(" ");
         const sequence = words.reduce(function (result, current) {
-            if (vocab[current]) result.push(vocab[current]);
+            const index = vocab[current.toLowerCase()];
+            if (index) result.push(index);
             return result;
         }, []);
         finalResult.push(paddingArray(sequence, 71));
