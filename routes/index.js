@@ -6,7 +6,7 @@ const vocab = require('../vocab/vobab.json');
 let model = null;
 
 function paddingArray(sequence, padding) {
-    const insertPadding = 71 - padding.length;
+    const insertPadding = padding - sequence.length;
     for (let i = 0; i < insertPadding; i++) {
         sequence.push(0);
     }
